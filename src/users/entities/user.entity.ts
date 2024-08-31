@@ -24,7 +24,7 @@ import {Entity,Column,PrimaryGeneratedColumn, ManyToOne} from 'typeorm';
     address: string;
 
     @Column()
-    id_nationality:number;
+    id_nationality:string;
 
     @Column()
     phone:string;
