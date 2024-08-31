@@ -1,4 +1,4 @@
-import { IsArray, IsDateString, IsEmail, IsNotEmpty, IsNumber, IsString } from 'class-validator';
+import { IsArray, IsDateString, IsEmail, IsNotEmpty,IsString } from 'class-validator';
 // import { RegisterAuthDto } from 'src/auth/dto/register.dto';
 
 export class CreateUserDto {
@@ -17,15 +17,15 @@ export class CreateUserDto {
 
   @IsNotEmpty()
   @IsDateString()
-  birthdate: string;
+  birthdate: string;  //la fecha esta en un formato de cadena compatible con ISO 8601 (1990-05-15)
 
   @IsNotEmpty()
   @IsString()
   address: string;
 
   @IsNotEmpty()
-  @IsNumber()
-  id_nationality: number;
+  @IsString()
+  id_nationality: string;
 
   @IsNotEmpty()
   @IsString()
