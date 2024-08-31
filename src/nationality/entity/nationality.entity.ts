@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { UserEntity } from 'src/users/entities/user.entity';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
 
 @Entity()
 export class Nationality {
@@ -7,4 +8,8 @@ export class Nationality {
     
     @Column()
     name: string;
+    
+    //Una nacionalidad puede estar asociada a varios usuario
+    @OneToMany(() => UserEntity, user => user.nationality)
+    users: UserEntity[];
 }
