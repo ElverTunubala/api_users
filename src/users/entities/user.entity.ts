@@ -1,5 +1,6 @@
 
-import {Entity,Column,PrimaryGeneratedColumn} from 'typeorm';
+import { Nationality } from 'src/nationality/entity/nationality.entity';
+import {Entity,Column,PrimaryGeneratedColumn, ManyToOne} from 'typeorm';
 
 @Entity({ name: 'users' })
   export class UserEntity {
@@ -30,6 +31,9 @@ import {Entity,Column,PrimaryGeneratedColumn} from 'typeorm';
 
     @Column("simple-array")
     roles: string[];
-    
+
+    //un usuario tiene una nacionalidad
+    @ManyToOne(() => Nationality, nationality => nationality.users)
+    nationality: Nationality;
     
 }
